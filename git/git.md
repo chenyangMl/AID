@@ -9,7 +9,6 @@
    - >防止代码丢失，做代码备份
    - >项目的版本管理和控制，可以通过设置节点进行跳转
    - >支持建立各自的开发环境的分支，互不影响，方便合并 (eg: 多人合作开发项目)
-   - >
    
 - 代码管理工具Git特点
 >* git是开源的，多在*nix下使用，可以管理各种文件
@@ -28,7 +27,7 @@
 * 仓库区: 用于备份工作区的内容
 * 远程仓库: 远程主机上的GIT仓库
 
-![©lvze](./git.png)
+![git and github ]()
 
 ## 2.1 git初始配置
 - >`主要需要配置用户名和邮箱，便于伯乐发现和联系你`
@@ -197,8 +196,8 @@ chown -R tarena:tarena tedu.git
     
 2. 从本地git仓库push文件到远程共享git仓库
 > `git push -u [name] [branch_name]` 说明: 默认是以分支为单位进行push提交的,-u表示第一次提交分支间建立连接
-    >> eg push主分支内容: git push -u origin master
-    >> 当本地仓库内容修改了，可以直接通过git push origin matser同步到远程共享仓库
+    - >> eg push主分支内容: git push -u origin master
+    - >> 当本地仓库内容修改了，可以直接通过git push origin matser同步到远程共享仓库
 
 3. 查看当前远程连接名
 > `git remote`
@@ -222,7 +221,7 @@ chown -R tarena:tarena tedu.git
 ## 3.1 基于https传输的使用方法
 
 1. 从远程共享git仓库克隆项目 `git clone [项目的网络地址]`
->> eg 从github上克隆项目: `git clone https://github.com/chenyangMl/AID.git`
+> eg 从github上克隆项目: `git clone https://github.com/chenyangMl/AID.git`
 
 2. 从远程共享仓库获取项目更新内容 `git pull`
 3.  从远程共享仓库拉取分支 `git fetch origin [branch_name]`
