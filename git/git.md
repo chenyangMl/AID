@@ -47,7 +47,7 @@
     git config --global user.email 12345678@163.com
 - 查看配置信息
     git config --list
--> 注意: 通常情况下使用 --global配置用户和邮箱即可.
+-> 注意: 通常情况下使用 --global配置用户和邮箱即可
     
 ## 2.2 git 基本命令
 - > git ini `初始化一个git项目`
