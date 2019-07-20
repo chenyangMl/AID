@@ -7,12 +7,12 @@ Course Notes
 ### 1. Basic Python 
 
 ### 2. Advanced Python
-#### 2.1 Data Structure and Algorithms
-##### 2.1.1 Abstract Data Structure(ADT)
-##### 2.1.2 Sort,Search,Dynamic programming
-#### 2.2 IO Network Programming
-#### 2.3 Concurrent Programming
-#### 2.4 RE
+  #### 2.1 Data Structure and Algorithms
+  ##### 2.1.1 Abstract Data Structure(ADT)
+  ##### 2.1.2 Sort,Search,Dynamic programming
+  #### 2.2 IO Network Programming
+  #### 2.3 Concurrent Programming
+  #### 2.4 RE
 
 ### 3. Database
 #### 3.1 mysql
