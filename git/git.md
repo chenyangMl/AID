@@ -213,14 +213,37 @@ chown -R tarena:tarena tedu.git
 > `git push --force origin [branch_name]` 用于本地版本比远程仓库版本低的时候
 
 
+
 # 3. Github使用
 
 > github就是一个远程共享git仓库管理社区，所以我们可以通过git工具将代码上传到github的共享仓库中。
 社区中的项目都是开源项目.
 
-## 3.1 创建ssh key
-本地创建 ssh 
+## 3.1 基于https传输的使用方法
 
-1. 创建仓库 new repos
-2. git remote add origin [仓库地址]
-3. git push origin [branch]
+1. 从远程共享git仓库克隆项目 `git clone [项目的网络地址]`
+>> eg 从github上克隆项目: `git clone https://github.com/chenyangMl/AID.git`
+
+2. 从远程共享仓库获取项目更新内容 `git pull`
+3.  从远程共享仓库拉取分支 `git fetch origin [branch_name]`
+
+4. 从本地上传代码 `git push -u origin master`
+
+## 3.2 基于ssh传输的使用方法
+
+使用ssh来生成秘钥连接github,并在你的github项目中配置秘钥，这样能够避免每次提交都需要输入用户名和密码.
+适合小组共同开发管理项目.
+1. 本地创建 ssh秘钥
+在信任的计算机上使用命令`$ ssh-keygen`创建秘钥. 秘钥文件在 `/home/tarena/.ssh/`
+其中包含私钥: id_rsa , 公钥:id_rsa.pub, 复制公钥中的内容.
+
+2. 在github中添加的信任的主机公钥
+登录github--> setting --> SSH and GPG keys --> New SSH key -->保存
+保存后github会向你的注册邮箱发送通知邮件。
+
+3. 使用 ssh 建立远程连接
+> `git remote add origin git@github.com:chenyangMl/AID.git`
+
+4. 向远程进行push时不需要输入用户名和密码
+> ` git push -u origin [branch]`
+> `git push` 建立连接后直接push即可
