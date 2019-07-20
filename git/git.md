@@ -237,7 +237,7 @@ chown -R tarena:tarena tedu.git
 其中包含私钥: id_rsa , 公钥:id_rsa.pub, 复制公钥中的内容.
 
 2. 在github中添加的信任的主机公钥
-登录github--> setting --> SSH and GPG keys --> New SSH key -->保存
+> 登录github--> setting --> SSH and GPG keys --> New SSH key -->粘贴复制的公钥-->保存。
 保存后github会向你的注册邮箱发送通知邮件。
 
 3. 使用 ssh 建立远程连接
