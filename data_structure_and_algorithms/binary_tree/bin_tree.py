@@ -14,6 +14,7 @@ class BinTree():
         self.res = []
 
     def add(self,val):
+
         if self.root is None:
             self.root = TreeNode(val)
             return
