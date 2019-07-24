@@ -5,6 +5,8 @@
     爬取路由： url = https://maoyan.com/board/4?offset=0
 
         路由规律 offst = 0,10,20,30,40....
+
+
 date: 2019-07-18
 author: ANTCODE
 '''
@@ -22,7 +24,6 @@ class MaoyanSpider():
                                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"},
                         {"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.57.2 (KHTML, like Gecko) "+\
                                       "Version/5.1.7 Safari/534.57.2"}]
-
 
     # 获取响应
     def _get_page(self,url):

@@ -57,9 +57,6 @@ class DyttSpider():
         except Exception:
             self.db.rollback()
 
-
-
-
     # 主程序入口
     def main(self):
         for i in range(2,101):

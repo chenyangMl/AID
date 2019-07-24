@@ -32,7 +32,7 @@ class BiLiVideo():
 
         res = requests.get(url=link,headers=self.headers).content
         filename = link[-8:]+'.mp4'
-        directory = '/home/tarena/project/Fourth/1_Spider/spider_day04_note/videos/'
+        directory = './videos/'
         if not os.path.exists(directory):
             os.makedirs(directory)
 
