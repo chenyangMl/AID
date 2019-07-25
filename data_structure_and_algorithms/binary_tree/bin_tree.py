@@ -46,7 +46,25 @@ class BinTree():
                 queue.append(curNode.left)
             if curNode.right is not None:
                 queue.append(curNode.right)
+
         return self.res
+
+    # 层次变量，Z之形遍历
+    def layer_order_Z(self,root):
+        if not root:
+            return
+        queue = [root,'#']
+        n = 1
+        while queue:
+            curNode = queue.pop(0)
+            self.res.append(curNode.val)
+
+            if curNode.val =="#":
+                n +=1
+            if n%2 ==0:
+                queue.append()
+            else:
+                pass
 
     # 前序序列化二叉树,root->left->right
     def serialize(self,root):
@@ -61,7 +79,6 @@ class BinTree():
             self.pre_order(root.left)
             self.pre_order(root.right)
         return self.res
-
 
     #中序遍历
     def mid_order(self,root):
