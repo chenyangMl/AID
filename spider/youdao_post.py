@@ -32,7 +32,7 @@ def attack_yd(word):
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36",
         "X-Requested-With": "XMLHttpRequest",
     }
-    #代理IP
+    #代理IP,
     proxies = {
         'http': 'http://475199896:2gadbghh@223.111.182.70:16818',
         'https': 'http://223.111.182.70:16818'
@@ -56,6 +56,6 @@ def attack_yd(word):
     return html_json
 
 if __name__ == '__main__':
-    word = input('请输入要翻译的单词>> ')
+    word = input('请输入要翻译的英文单词>> ')
     result = attack_yd(word)['translateResult'][0][0]['tgt']
     print(result)

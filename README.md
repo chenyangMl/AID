@@ -22,7 +22,6 @@ Course Notes
 
 ### 5.spider
 #### 5.1 抓取结构化数据示例
-[抓取链家二手房信息](https://github.com/chenyangMl/AID/blob/master/spider/lianjia_mysql.py)
 #### 5.2 抓取非结构化数据示例
 
 ### tools
