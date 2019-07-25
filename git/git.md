@@ -183,9 +183,9 @@ chown -R tarena:tarena tedu.git
 
 
 ### 2.6.1 从远程向本地拉取项目和更新内容
-> `git clone [远程共享git仓库地址]` 从远程克隆整个项目，并自动建立与远程仓库名为origin的远程连接.
-> `git pull` 拉取远程共享仓库中最新的内容，合并到当前内容。
-> `git fetch origin [branch_name]` 从远程共享仓库拉取分支
+> 1. `git clone [远程共享git仓库地址]` 从远程克隆整个项目，并自动建立与远程仓库名为origin的远程连接.
+> 1. `git pull` 拉取远程共享仓库中最新的内容，合并到当前内容。
+> 1. `git fetch origin [branch_name]` 从远程共享仓库拉取分支
 
 
 ### 2.6.2 本地向远程仓库push文件
