@@ -55,7 +55,14 @@ def attack_yd(word):
     html_json = requests.post(url=url,data=data,headers=headers,proxies=proxies).json()
     return html_json
 
+def main():
+    print('''
+===========ANTCODE翻译器=============
+    ''')
+    while True:
+        word = input('Input Words>> ')
+        result = attack_yd(word)['translateResult'][0][0]['tgt']
+        print('Result: ',result)
+
 if __name__ == '__main__':
-    word = input('请输入要翻译的英文单词>> ')
-    result = attack_yd(word)['translateResult'][0][0]['tgt']
-    print(result)
+    main()

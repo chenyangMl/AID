@@ -12,7 +12,7 @@ python-spider
 动态页面指浏览器请求地址时服务端返回了一个没有重要信息的html页面，重要信息是通过JS异步获取再渲染到页面上的。
 > 判断是否为静态页面； 通过右键查看源代码，再在源代码查找能否获取到需要的信息，能获取的即为静态页面.
 
-#### 1.1.爬取猫眼电影榜单信息
+#### 1.1 爬取猫眼电影榜单信息
 - 简介: 
 > 地址: https://maoyan.com/board/4?offset={}
 
@@ -25,7 +25,7 @@ python-spider
 - 示例代码: [maoyan.py]()
 
 
-#### 1.2. 电影天堂电影信息
+#### 1.2 电影天堂电影信息
 - 简介；
 > 地址: https://www.dytt8.net/html/gndy/dyzz/list_23_1.html
 
@@ -34,7 +34,7 @@ python-spider
 >> urllib.request, re, pymysql
 - 示例代码: [dytt.py]()
 
-#### 1.3 链家二手房信息
+#### 1.3  链家二手房信息
 - 简介:
 > 地址: https://bj.lianjia.com/ershoufang/pg2/
 - 主要技术：
@@ -55,6 +55,9 @@ HTML文档中元素的匹配。
 ### 2.爬取动态网页
 - 获取动态网页的真实地址.
 > 打开F12--> network -->抓取实际数据的XHR请求.
+####2.0 爬取民政部每月最新行政区分码
+- 示例代码 [xinzhen.py]()
+
 #### 2.1 爬取腾讯招聘信息
 - 简介: 
 > 腾讯招聘网站做了动态页面的反爬措施，当浏览器访问网站地址时响应回来的html中并没有需要信息，
@@ -68,13 +71,20 @@ HTML文档中元素的匹配。
 
 - 示例代码:[douban.py]()
 
-#### 2.2 爬取B站短视频
+#### 2.3 爬取B站短视频
 - 简介:
 > B站的的短视频是用户滚动滑轮时动态加载的，所有在抓取时需要获取其动态链接.
 - 主要技术点
 > 1. 非结构化数据视频的获取: requests.get(url,headers).content
  
 - 示例代码: [bilibili.py]()
+
+#### 2.4 基于多线程的小米应用商店爬取
+- 示例代码 [xiaomi.py]()
+
+#### 2.5 基于selenimum+Chrome的京东商城
+
+- 示例代码[jd.py]()
 
 #### 2.2 模拟有道翻译
 - 简介: 
@@ -90,3 +100,25 @@ HTML文档中元素的匹配。
 > 2. post请求:  requests.post(url,data,headers) 
 
 - 示例代码: [youdao.py]()
+
+#### 2.4 模拟百度翻译
+- 简介:baidu_fanyi.py
+- 主要技术
+```text
+Form Data
+    from: en
+    to: zh
+    query: word
+    transtype: realtime
+    simple_means_flag: 3
+    sign: 210056.513977
+    token: 231e5788be2651ee5408f825643c0b0
+```
+> 1. sign加密
+>> 重点: 分析Form Data数据加密过程， 使用pyexecjs模拟的源代码的中的sign加密过程.
+> 2. token生成.
+>> 通过解析JS代码发现token是获取的暂存
+> 3. Cookies
+
+### Cookie,Session模拟登录案例
+- 人人网
