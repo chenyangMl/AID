@@ -15,6 +15,7 @@ class Queue1():
     #数组实现队列,先进先出
     def __init__(self):
         self.items = []
+
     def push(self,val):
         if not val:
             return
@@ -29,9 +30,6 @@ class Queue1():
         return len(self.items)
 
 class TreePrinter:
-    def printTree(self, root):
-        # write code here
-        return self.bfs_order(root)
 
     def bfs_order(self,root):
         '''
@@ -68,6 +66,7 @@ class TreePrinter:
         return res
 
     # def bfs_order_z(self,root):
+    #     #实现一个z型打印二叉树
     #     #定义一个队列
     #     res = []
     #
@@ -111,9 +110,63 @@ class TreePrinter:
     #
     #     return res
 
+    def bfs_order_z(self,root):
+        # 初始化一个队列结构
+        curLayerNodes = Queue1()
+        curLayerNodes.push(root)
+
+        res = []
+        if not root:
+            return res
+        # 初始化设定当前层为偶数层
+        isEvenLayer = True
+        #　遍历当前层节点。
+        while curLayerNodes.size() != 0:
+            curLayerVal = []
+            nextLayerNode = Queue1()
+            # 相领层改变层属性。
+            isEvenLayer = not isEvenLayer
+            # 获取当前层的值，并加载下一层节点。
+            while curLayerNodes.size() != 0:
+                curNode = curLayerNodes.pop()
+                curLayerVal.append(curNode.val)
+                if curNode.left:
+                    nextLayerNode.push(curNode.left)
+                if curNode.right:
+                    nextLayerNode.push(curNode.right)
+            curLayerNodes = nextLayerNode
+            # 根据当前层的奇偶性
+            res.append(curLayerVal[::-1]) if isEvenLayer else res.append(curLayerVal)
+        return res
+
+    def print(self, pRoot):
+        resultArray = []
+
+        if not pRoot:
+            return resultArray
+
+        curLayerNodes = [pRoot]
+        isEvenLayer = True
+
+        while curLayerNodes:
+            curLayerValues = []
+            nextLayerNodes = []
+            isEvenLayer = not isEvenLayer
+
+            for node in curLayerNodes:
+                curLayerValues.append(node.val)
+                if node.left:
+                    nextLayerNodes.append(node.left)
+                if node.right:
+                    nextLayerNodes.append(node.right)
+            curLayerNodes = nextLayerNodes
+            resultArray.append(curLayerValues[::-1]) if isEvenLayer else resultArray.append(curLayerValues)
+        return resultArray
+
+
 
 if __name__ == '__main__':
-    arr = {132,11,375,625,225,416}
+    # arr = {132,11,375,625,225,416}
     from bin_tree import BinTree
     btree = BinTree()
     btree.add(132)
@@ -122,5 +175,9 @@ if __name__ == '__main__':
     btree.add(625)
     btree.add(225)
     btree.add(416)
+    btree.add(512)
+    btree.add(47)
+    btree.add(49)
+    btree.add(60)
     print(TreePrinter().bfs_order(btree.root))
     print(TreePrinter().bfs_order_z(btree.root))
