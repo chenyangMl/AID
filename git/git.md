@@ -15,7 +15,7 @@
 >* git是分布式的项目管理工具(svn是集中式的)
 >* git数据管理更多样化，分享速度快，数据安全
 >* git 拥有更好的分支支持，方便多人协调
- 
+
 
 # 2.GIT使用
 - 安装
@@ -27,7 +27,7 @@
 * 仓库区: 用于备份工作区的内容
 * 远程仓库: 远程主机上的GIT仓库
 
-![git and github ]()
+![git and github ](./git.png)
 
 ## 2.1 git初始配置
 - >`主要需要配置用户名和邮箱，便于伯乐发现和联系你`
@@ -53,10 +53,12 @@
 - > git init `初始化一个git项目`
 - > git status `查看本地仓库状态`
 - > git add [file...] `将本地工作区文件记录到暂存区`
-    >> 支持提交多个文件(空格间隔)，全部文件(使用*提交，除了隐藏文件以外)隐藏文件需要指定文件名提交
+  >
+  > > 支持提交多个文件(空格间隔)，全部文件(使用*提交，除了隐藏文件以外)隐藏文件需要指定文件名提交
 - > git rm --cached [file] `撤销记录到暂存区的文件`
 - > git commit [file] -m [message] `将暂存区文件提交到本地仓库`
-    >> 说明: -m表示添加一些同步信息，描述同步内容
+  >
+  > > 说明: -m表示添加一些同步信息，描述同步内容
 - > git log --pretty=oneline `查看commit日志`
 
 - > git diff [file] `对比工作区和仓库文件的差异`
@@ -64,8 +66,9 @@
 
 - > git mv [file] [path] `移动文件`
 - > git rm [file] `删除文件`
-    >> git commit -m [message] `rm 和 mv 只是操作了工作区内容，提交后会同步操作到仓库`
-
+  >
+> > git commit -m [message] `rm 和 mv 只是操作了工作区内容，提交后会同步操作到仓库`
+  
     
 ## 2.3 版本管理命令
 - 使用场景： 有效持续的管理项目版本
@@ -90,7 +93,7 @@
 e.g. 在最新的commit处添加标签v1.0
 git tag v1.0 -m '版本1'
 ```
-            
+
 5. 查看标签
 
 - >`git tag` 查看标签列表
@@ -192,8 +195,9 @@ chown -R tarena:tarena tedu.git
 
 1. 在本地git仓库与远程的共享git仓库建立连接
 > `git remote add [name] [远程共享git仓库地址]` 说明： 传输协议可以是ssh , https, file...
-    >> eg 这里使用https连接: git remote add origin https://github.com/XXXXXX/AID.git
-    
+>
+> > eg 这里使用https连接: git remote add origin https://github.com/XXXXXX/AID.git
+
 2. 从本地git仓库push文件到远程共享git仓库
 > `git push -u [name] [branch_name]` 说明: 默认是以分支为单位进行push提交的,-u表示第一次提交分支间建立连接
     - >> eg push主分支内容: git push -u origin master
